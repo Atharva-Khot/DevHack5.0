@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <style>
+      .carouse-wrapper {
+    max-height: 501px;
+  }
+  .carousel {
+    height: 501px;
+    margin: 0 auto;
+    position: relative;
+    max-width: 751px;
+  }
+  .carousel__image,.kt {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+  .carousel__track-container {
+    background-color: gray;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .carousel__track {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
+    transition: transform 400ms ease;
+  }
+  .carousel__slide {
+    bottom: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; 
+  }
+  
+  .carousel__button {
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: unset;
+    padding: 0;
+    z-index: 100;
+    border-radius: 50%;
+    padding: 7px;
+    outline: none;
+  }
+  .carousel__button--right {
+    right: 10px;
+  }
+  .carousel__button--left {
+    left: 10px;
+  }
+  .carousel__button img,.kt {
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+  .carousel__nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  .carousel__indicator {
+    border: unset;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(182, 182, 182, 0.7);
+    padding: 0;
+    margin: 0 5px;
+    outline: none;
+  }
+  .carousel__indicator.current-slide {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+
+  /* .kt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+
+  .kt{
+    padding: 20px;
+  }
+
+  .carousel__track-container{
+    border: 2px solid red;
+    margin-top: 75px;
+  }
+
+  .carousel__slide{
+    padding: 20px 30px;
+  }
+
+  /* // */
+
+  .carousel__image {
+    text-align: center; /* Center align the content */
+  }
+  
+  .carousel__image h1 {
+    font-size: 32px; /* Adjust the font size of the heading */
+    margin-bottom: 10px; /* Add spacing between the heading and the other elements */
+    display: inline-block; /* Ensure h1 takes only the width it needs */
+    font-weight: 600;
+    color: blueviolet;
+  }
+  
+  .carousel__image h3 {
+    font-weight: 300;
+    font-size: 25px; /* Adjust the font size of the subheadings */
+    margin: 5px 0; /* Add spacing between the subheadings */
+    text-align: left; /* Align h3 elements to the left */
+    color: aqua;
+  }
+  .carousel__image p{
+    font-weight: 100;
+    font-size: 15px; /* Adjust the font size of the subheadings */
+    margin: 5px 0; /* Add spacing between the subheadings */
+    text-align: left;
+  }
+
+  .horizontal-line{
+    width: 200px;
+    height: 2px;
+    background-color: black;
+  }
+    </style>
+    <!-- <link rel="stylesheet" href="style_slider.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  </head>
+  <body>
+      <div class="carousel-wrapper">
+  <div class="carousel">
+    <button id="carouselPreviousSlideButton" class="carousel__button carousel__button--left">
+      <!-- <img src="./images/carousel-arrow-left.svg" alt="img1"> -->
+      <i class="bi bi-arrow-left-square-fill"></i>
+    </button>
+    <div class="carousel__track-container">
+      <ul id="track" class="carousel__track">
+        <li class="carousel__slide current-slide">
+          <!-- <img class="carousel__image" src="https://picsum.photos/500/300" alt=""> -->
+          <div class="carousel__image kt">
+            <h1>Monday</h1>
+
+            <h3>Breakfast</h3>
+            <p>fdsgfg</p>
+            <hr class="horizontal-line">
+            <h3>Lunch</h3>
+            <p></p>
+            <hr class="horizontal-line">
+            <h3>Snacks</h3>
+            <p></p>
+            <hr class="horizontal-line">
+            <h3>Dinner</h3>
+            <p></p>
+          </div>
+        </li>
+        <li class="carousel__slide">
+          <!-- <img class="carousel__image" src="https://picsum.photos/500/300" alt=""> -->
+          <div class="carousel__image kt">
+            <h1>Tuesday</h1>
+
+            <h3>Breakfast</h3>
+            <h3>Lunch</h3>
+            <h3>Snacks</h3>
+            <h3>Dinner</h3>
+          </div>
+        </li>
+        <li class="carousel__slide">
+          <!-- <img class="carousel__image" src="https://picsum.photos/500/300" alt=""> -->
+          <div class="carousel__image kt">
+            <h1>Wednesday</h1>
+
+            <h3>Breakfast</h3>
+            <h3>Lunch</h3>
+            <h3>Snacks</h3>
+            <h3>Dinner</h3>
+          </div>
+        </li>
+        <li class="carousel__slide">
+          <!-- <img class="carousel__image" src="https://picsum.photos/500/300" alt=""> -->
+          <div class="carousel__image kt">
+            <h1>Thursday</h1>
+
+            <h3>Breakfast</h3>
+            <h3>Lunch</h3>
+            <h3>Snacks</h3>
+            <h3>Dinner</h3>
+          </div>
+        </li>
+        <li class="carousel__slide">
+          <!-- <img class="carousel__image" src="https://picsum.photos/500/300" alt=""> -->
+          <div class="carousel__image kt">
+            <h1>Friday</h1>
+
+            <h3>Breakfast</h3>
+            <h3>Lunch</h3>
+            <h3>Snacks</h3>
+            <h3>Dinner</h3>
+          </div>
+        </li>
+        <li class="carousel__slide">
+            <!-- <img class="carousel__image" src="https://picsum.photos/500/300" alt=""> -->
+            <div class="carousel__image kt">
+                <h1>Saturday</h1>
+
+            <h3>Breakfast</h3>
+            <h3>Lunch</h3>
+            <h3>Snacks</h3>
+            <h3>Dinner</h3>
+
+              </div>
+          </li>
+        <li class="carousel__slide">
+            <!-- <img class="carousel__image" src="https://picsum.photos/500/300" alt=""> -->
+            <div class="carousel__image kt">
+                <h1>Sunday</h1>
+
+            <h3>Breakfast</h3>
+            <h3>Lunch</h3>
+            <h3>Snacks</h3>
+            <h3>Dinner</h3>
+              </div>
+        </li>
+      </ul>
+    </div>
+    <button id="carouselNextSlideButton" class="carousel__button carousel__button--right">
+      <!-- <img src="./images/carousel-arrow-right.svg" alt=""> -->
+      <i class="bi bi-arrow-right-square-fill"></i>
+    </button>
+    <div id="carouselNav" class="carousel__nav">
+      <button class="carousel__indicator current-slide"></button>
+      <button class="carousel__indicator"></button>
+      <button class="carousel__indicator"></button>
+      <button class="carousel__indicator"></button>
+      <button class="carousel__indicator"></button>
+      <button class="carousel__indicator"></button>
+      <button class="carousel__indicator"></button>
+    </div>
+  </div>
+</div>
+      <!-- <script src="script_slider.js"></script> -->
+      <script>
+        const track = document.getElementById('track'),
+  slides = Array.from(track.children),
+  nextSlideButton = document.getElementById('carouselNextSlideButton'),
+  previousSlideButton = document.getElementById('carouselPreviousSlideButton'),
+  carouselNav = document.getElementById('carouselNav'),
+  carouselNavDots = Array.from(carouselNav.children);
+window.addEventListener('resize', setSlideImagePosition)
+//  position slide images parallel to one another horizontally
+function setSlideImagePosition() {
+  slideXDimension = slides[0].getBoundingClientRect().width;
+  for (let index = 0; index < slides.length; index++) { 
+    slides[index].style.left = `${index * slideXDimension}px`
+  }
+  const currentSlide = track.querySelector('.current-slide');
+  track.style.transform = `translateX(-${currentSlide.style.left})`
+}
+setSlideImagePosition();
+//  current slide is moved to the left when next button is clicked 
+function moveSlide(track, currentSlide, targetSlide) { 
+  track.style.transform = `translateX(-${targetSlide.style.left})`;
+  currentSlide.classList.remove('current-slide');
+  targetSlide.classList.add('current-slide');
+}
+nextSlideButton.addEventListener('click', function () { 
+  const currentSlide = track.querySelector('.current-slide');
+  const targetSlide = currentSlide.nextElementSibling;
+  const currentDot = carouselNav.querySelector('.current-slide');
+  const nextDot = currentDot.nextElementSibling;
+  if (targetSlide) {
+    moveSlide(track, currentSlide, targetSlide)
+    updateCarouselDots(currentDot, nextDot)
+  } else { 
+    const targetSlide = slides[0];
+    const nextDot = carouselNavDots[0]
+    moveSlide(track, currentSlide, targetSlide)
+    updateCarouselDots(currentDot, nextDot)
+  }
+})
+previousSlideButton.addEventListener('click', function () { 
+  const currentSlide = track.querySelector('.current-slide');
+  const targetSlide = currentSlide.previousElementSibling;
+  const currentDot = carouselNav.querySelector('.current-slide');
+  const nextDot = currentDot.previousElementSibling;
+  if (targetSlide) {
+    moveSlide(track, currentSlide, targetSlide)
+    updateCarouselDots(currentDot, nextDot)
+  } else { 
+    const targetSlide = slides[slides.length - 1];
+    const nextDot = carouselNavDots[carouselNavDots.length - 1]
+    moveSlide(track, currentSlide, targetSlide)
+    updateCarouselDots(currentDot, nextDot)
+  }
+})
+carouselNav.addEventListener('click', function (event) { 
+  targetDot = event.target.closest('button');
+  console.log(targetDot)
+  if (!targetDot) { 
+    return
+  }
+  const currentSlide = track.querySelector('.current-slide'),
+        currentDot = carouselNav.querySelector('.current-slide'),
+        targetIndex = carouselNavDots.findIndex(dot => dot === targetDot),
+        targetSlide = slides[targetIndex];
+  moveSlide(track, currentSlide, targetSlide);
+  updateCarouselDots(currentDot, targetDot);
+})
+function updateCarouselDots(currentDot, targetDot) { 
+  currentDot.classList.remove('current-slide');
+  targetDot.classList.add('current-slide');
+} 
+slides.forEach(setSlideImagePosition)
+      </script>
+  </body>
+</html>

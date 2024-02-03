@@ -13,9 +13,9 @@ app.set('view engine','ejs');
 
 
 //*************************** */
-mongoose.connect("mongodb://localhost:27017/userDB",{useNewUrlParser : true});
+mongoose.connect("mongodb://localhost:27017/devHack",{useNewUrlParser : true});
 const userSchema=new mongoose.Schema({
-    email:String,
+    userId:String,
     password:String,
 });
 
@@ -37,7 +37,7 @@ app.get("/login",(req,res)=>{
 });
 
 app.get("/register",(req,res)=>{
-    res.render("register");
+    res.render("register_new");
 });
 
 app.get("/logout",(req,res)=>{
@@ -48,24 +48,9 @@ app.get("/submit",(req,res)=>{
     res.render("submit");
 }); 
 
-//this below commented code have issues of error handling 
-// app.post("/register",async(req,res)=>{
-//     const userN=req.body.username;
-//     const pwd=req.body.password;
-
-//     const newUser=new User({
-//         email:userN,
-//         password:pwd,
-//     });
-
-//     newUser.save(function(err){
-//         if(err){
-//             console.log(err);
-//         }else{
-//             res.render("secrets");
-//         }
-//     })
-// });
+app.get("/menu",(req,res)=>{
+    res.render("slider_loop");
+})
 
 
 
@@ -73,14 +58,14 @@ app.post("/register", async (req, res) => {
     const userN = req.body.username;
     const pwd = req.body.password;
 
-    const newUser = new User({
-        email: userN,
+    const newUser = new User({ 
+        userId: userN,
         password: pwd,
     });
 
     try {
         await newUser.save();
-        res.render("secrets");
+        res.render("navbar",{name:userN});
     } catch (err) {
         console.error(err);
         // Handle the error, for example, send an error response to the client
@@ -88,24 +73,28 @@ app.post("/register", async (req, res) => {
     }
 });
 
+app.post("/login", async (req, res) => {
+    const password = req.body.password;
+    const username = req.body.username;
 
-app.post("/login",async(req,res)=>{
-    const password=req.body.password;
-    const username=req.body.username;
+    try {
+        const user = await User.findOne({ userId: username });
 
-    try{
-        const data=await User.findOne({email:username});
-        if(data){
-            if(data.password===password){
-                res.render("secrets");
-            }else{
-                res.render("home");
+        if (user) {
+            if (user.password === password) {
+                res.render("navbar",{name:username}); // Render the secrets page if the password matches
+            } else {
+                res.render("home"); // Render the home page if the password doesn't match
             }
+        } else {
+            console.error(err);
+            res.sendStatus(404);
         }
-    }catch(err){
-        console.send(404);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Internal Server Error"); // Handle internal server errors
     }
-})
+});
 
 
 app.listen(PORT,()=>{

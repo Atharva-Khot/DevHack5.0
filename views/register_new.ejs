@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Page</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <style>
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-box {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.input-group button {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.input-group button:hover {
+  background-color: #0056b3;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="register-box">
+      <h2>Register</h2>
+      <form action="/register" method="POST">
+        <div class="input-group">
+          <label for="username">Student Id:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="input-group">
+          <button type="submit">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

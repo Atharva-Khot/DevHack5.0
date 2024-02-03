@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coupon Selection</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 300px);
+      gap: 20px;
+      margin-top: 60px;
+      position: relative;
+      left: 30%;
+    }
+    .coupon {
+      border: 1px solid #ccc;
+      padding: 10px;
+      height: 20vh;
+      text-align: center;
+      padding-top: 40px;
+    }
+    .coupon img {
+      /* max-width: 100%; */
+      height: 50px;
+      width: 50px;
+      height: auto;
+    }
+    .counter {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .counter button {
+      font-size: 18px;
+      padding: 5px 10px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    #submitBtn {
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="coupon">
+      <img src="https://picsum.photos/id/237/200/300" alt="Coupon 1">
+      <div class="counter">
+        <button class="decreaseBtn">-</button>
+        <span class="selectedCoupons">0</span> selected
+        <button class="increaseBtn">+</button>
+      </div>
+    </div>
+    <div class="coupon">
+      <img src="https://picsum.photos/id/237/200/300" alt="Coupon 2">
+      <div class="counter">
+        <button class="decreaseBtn">-</button>
+        <span class="selectedCoupons">0</span> selected
+        <button class="increaseBtn">+</button>
+      </div>
+    </div>
+    <div class="coupon">
+      <img src="https://picsum.photos/id/237/200/300" alt="Coupon 3">
+      <div class="counter">
+        <button class="decreaseBtn">-</button>
+        <span class="selectedCoupons">0</span> selected
+        <button class="increaseBtn">+</button>
+      </div>
+    </div>
+    <div class="coupon">
+      <img src="https://picsum.photos/id/237/200/300" alt="Coupon 4">
+      <div class="counter">
+        <button class="decreaseBtn">-</button>
+        <span class="selectedCoupons">0</span> selected
+        <button class="increaseBtn">+</button>
+      </div>
+    </div>
+  </div>
+  <div id="submitBtn">
+    <button onclick="submitSelection()">Submit</button>
+  </div>
+
+  <script>
+    const decreaseBtns = document.querySelectorAll('.decreaseBtn');
+    const increaseBtns = document.querySelectorAll('.increaseBtn');
+    const selectedCounts = document.querySelectorAll('.selectedCoupons');
+
+    decreaseBtns.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        if (parseInt(selectedCounts[index].textContent) > 0) {
+          selectedCounts[index].textContent = parseInt(selectedCounts[index].textContent) - 1;
+        }
+      });
+    });
+
+    increaseBtns.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        selectedCounts[index].textContent = parseInt(selectedCounts[index].textContent) + 1;
+      });
+    });
+
+    function submitSelection() {
+      selectedCounts.forEach((count, index) => {
+        console.log(`Coupon ${index + 1}: ${count.textContent}`);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+body {
+  background-color: #E8ECEF;
+}
+
+.centered {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+}
+
+
+
+/* new */
+/* .container{
+  border: 2px solid black;
+  position: relative;
+  left: 25%;
+  top: 50%;
+} */
