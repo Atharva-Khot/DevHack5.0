@@ -75,7 +75,7 @@
         }
 
         ul li:hover{
-            background-color: aqua;
+            background-color: rgb(210, 158, 36);
         }
 
         .header:hover{
@@ -123,15 +123,15 @@
         <div class="user">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF32V4p_7Pzslf8BxTahhErkfk-TGJN8nZvQ&usqp=CAU" alt="imgg" class="user-img">
             <div>
-                <h2 class="user-id">User id:</h2>
+                <h2 class="user-id"><%=name%></h2>
             </div>
         </div>
         <br>
         <hr class="horizontal-line">
 
         <ul>
-            <li><img src="https://www.shutterstock.com/image-vector/logout-icon-exit-vector-trendy-260nw-1493155877.jpg" alt=""><p>First</p></li>
-            <li><img src="https://www.shutterstock.com/image-vector/logout-icon-exit-vector-trendy-260nw-1493155877.jpg" alt=""><p>second</p></li>
+            <li class="coupon-click"><i class="bi bi-wallet2"></i><p>Digital Wallet</p></li>
+            <li class="update_meal-click"><i class="bi bi-ticket-detailed"></i><p>Redeem Coupon</p></li>
             <li class="menu-click"><i class="bi bi-menu-app-fill"></i><p>Menu</p></li>
 
         </ul>
@@ -145,6 +145,18 @@
     <script>
         document.querySelector(".menu-click").addEventListener("click",()=>{
             window.location.href="menu";
+        })
+
+        document.querySelector(".coupon-click").addEventListener("click",()=>{
+            window.location.href="coupons";
+        })
+
+        document.querySelector(".update_meal-click").addEventListener("click",()=>{
+            window.location.href="mealUpdate";
+        })
+
+        document.querySelector(".logout-btn").addEventListener("click",()=>{
+            window.location.href="logout";
         })
     </script>
 </body>
