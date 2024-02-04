@@ -36,3 +36,31 @@ Make sure to deploy the output of `remix build`
 
 - `build/`
 - `public/build/`
+
+## INFO
+
+The branch has three contract files Token.sol, Client.sol and Server.sol.
+These are used to simulate the working of the mess, with students being the client and mess being server.
+
+## RUNNING TESTCASES
+
+The code written can be tested in terminal. Clone the repo on localhost.
+Install truffle.
+```sh
+$ npm i -g solc
+```
+
+Open a new tab/window in your terminal. Type npm install command to install truffle:
+
+```sh
+$ npm i -g truffle
+```
+
+Now in the terminal run commands.
+
+```sh
+truffle compile
+truffle test
+```
+
+Which shows the testcases.
